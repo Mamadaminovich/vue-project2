@@ -1,6 +1,7 @@
 <script setup>
 import navbarVue from '../views/navbar.vue';
 import diagramVue from '../views/diagram.vue';
+import Chart from 'chart.js/auto'
 </script>
 <template>
   <navbarVue></navbarVue>

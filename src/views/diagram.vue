@@ -1,4 +1,90 @@
 
+
+<template>
+
+    <div class="w-full h-auto border rounded mt-5 bg-white p-5">
+        <h3 class="font-bold text-2xl font-rubik mb-3">Homiylar va talabalar soni</h3>
+        <div class="flex items-center gap-4 mb-2">
+            <p class="flex items-center gap-2 font-normal text-xs"><span
+                    class="p-[4px] bg-blue-500 rounded-[50%]"></span>Homiylar</p>
+            <p class="flex items-center gap-2 font-normal text-xs"><span
+                    class="p-[4px] bg-red-500 rounded-[50%]"></span>Talabalar</p>
+        </div>
+        <canvas id="acquisitions"></canvas>
+    </div>
+</template>
+  
+<script>
+import Chart from 'chart.js/auto'
+export default {
+    methods: {
+        diagramShow() {
+            (async function () {
+            const data = [
+                { month: 'yanvar', count: 16 },
+                { month: 'fevral', count: 15 },
+                { month: 'mart', count: 15 },
+                { month: 'aprel', count: 16 },
+                { month: 'may', count: 18 },
+                { month: 'iyun', count: 23 },
+                { month: 'iyul', count: 23 },
+                { month: 'avgust', count: 22 },
+                { month: 'sentabr', count: 22 },
+                { month: 'oktyabr', count: 20 },
+                { month: 'novabr', count: 22 },
+                { month: 'dekabr', count: 23 },
+            ];
+            const data2 = [
+                { count: 17 },
+                { count: 17 },
+                { count: 18 },
+                { count: 20 },
+                { count: 21 },
+                { count: 22 },
+                { count: 21 },
+                { count: 19 },
+                { count: 19 },
+                { count: 22 },
+                { count: 24 },
+                { count: 26 },
+            ];
+            new Chart(
+                document.getElementById('acquisitions'),
+                {
+                    type: 'line',
+                    data: {
+                        labels: data.map(row => row.month),
+                        datasets: [
+                            {
+                                label: 'Homylar',
+                                data: data.map(row => row.count)
+                            },
+                            {
+                                label: 'Talabalar',
+                                data: data2.map(row => row.count)
+                            }
+                        ]
+                    },
+                }
+            );
+        })();
+        }
+    },
+    mounted() {
+        this.diagramShow()
+    },
+
+}
+</script>
+  
+  
+
+
+
+
+
+
+<!-- 
 <template>
     <div class="bg-white rounded-lg p-5 mt-6">
         <h2 class="font-bold text-2xl mb-2">Homiylar va talabalar soni</h2>
@@ -62,7 +148,7 @@ export default {
         };
     },
 };
-</script>
+</script> -->
 
 
 

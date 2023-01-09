@@ -21,7 +21,7 @@
                     </button>
                     <button @click="sponser()"
                         class="uppercase font-medium text-xs py-2.5 px-6 tracking-widest text-blue-500" 
-                        v-bind:class="{ 'bg-dashBtnFocusedColor text-white/100': isActive == false }">
+                        v-bind:class="{ 'bg-dashBtnFocusedColor text-white/100': isActive == false}">
                         Homiylar
                     </button>
                     <button class="text-blue-500 uppercase font-medium text-xs py-2.5 px-6 tracking-widest">
